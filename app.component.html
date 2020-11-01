@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+
+
+</head>
+<body>
+  <form class="example-form">
+<div class='form-group'>
+
+<div class='form-control' >
+<label> FirstName</label>
+  <input ngModel name='firstName'  #firstName ="ngModel" type='text' id='001' (change)='log(firstName)' required minlength='3'/>
+
+</div>
+<div class='alert alert-danger'  *ngIf='firstName.touched'>
+  
+ <div *ngIf='!firstName.valid'> FirstName is Required Baba </div>
+ <div *ngIf='firstName.errors.minlength'> Length should be min {{ firstname.errors.minlength.requiredlength}} </div>
+
+</div>
+
+<div class='form-control' >
+  <label> Comment</label>
+    <input type='TextArea'  cols='10' rows='10'id='002'/>
+  </div>
+
+</div>
+</form>
+</body>
